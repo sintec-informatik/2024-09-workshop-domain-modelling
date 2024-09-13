@@ -13,7 +13,7 @@ public class AttendeeService {
 
     private final AttendeeRepositoryService repositoryService;
 
-    public Attendee createAttendee() {
+    public Attendee createAttendee(Attendee input) {
         var attendee = new Attendee();
 
         return this.repositoryService.save(attendee);

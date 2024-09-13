@@ -21,8 +21,9 @@ public class AttendeeController {
     private final AttendeeDtoMapper mapper;
 
     @PostMapping("/attendees")
-    public ResponseEntity<AttendeeDto> createAttendee() {
-        var attendee = attendeeService.createAttendee();
+    public ResponseEntity<AttendeeDto> createAttendee(AttendeeDto attendeeInput) {
+        var input = this.mapper.toModel(attendeeInput);
+        var attendee = attendeeService.createAttendee(input);
 
         var uri = MvcUriComponentsBuilder.
                 fromMethodCall(on(AttendeeController.class).getAttendee(0L))
