@@ -11,4 +11,5 @@ public class Attendee {
 
     private Long id;
 
+    private EMailAddress emailAddress;
 }

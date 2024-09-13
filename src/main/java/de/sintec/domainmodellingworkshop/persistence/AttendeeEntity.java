@@ -1,9 +1,7 @@
 package de.sintec.domainmodellingworkshop.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import de.sintec.domainmodellingworkshop.core.EMailAddress;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -17,4 +15,6 @@ public class AttendeeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
+
+    private EMailAddress emailAddress;
 }

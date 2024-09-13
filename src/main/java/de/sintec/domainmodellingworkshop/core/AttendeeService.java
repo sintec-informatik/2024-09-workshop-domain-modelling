@@ -14,7 +14,8 @@ public class AttendeeService {
     private final AttendeeRepositoryService repositoryService;
 
     public Attendee createAttendee(Attendee input) {
-        var attendee = new Attendee();
+        var attendee = new Attendee()
+                .setEmailAddress(input.getEmailAddress());
 
         return this.repositoryService.save(attendee);
     }
